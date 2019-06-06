@@ -20,7 +20,7 @@ const forecast = (latitude, longitude, callback) => {
         } else if (body.error) {
             callback('Unable to find location', undefined)
         } else {
-            callback(undefined, body.daily.data[0].summary + ' It is currently ' + body.currently.temperature + ' degress out. There is a ' + body.currently.precipProbability + '% chance of rain.'+ ' The nearest storm distance is ' + body.currently.nearestStormDistance  + ' miles and the windgust is about ' + body.currently.windGust + ' mph' )
+            callback(undefined, body.daily.data[0].summary + ' It is currently ' + body.currently.temperature + ' degress out. There is a ' + body.currently.precipProbability + '% chance of rain.'+ ' The highest temperature today is ' + body.daily.data[0].temperatureMax  + '  and the lowest temp is ' + body.daily.data[0].temperatureMin + ' degrees Farenheit' )
         }
     })
 }
